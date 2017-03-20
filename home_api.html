@@ -22,7 +22,7 @@ var marker = new google.maps.Marker({
     map: map,
     draggable:true,
     animation: google.maps.Animation.DROP,
-    title: 'Hello PULV!'
+    title: 'Marker !'
   });
 
 var infowindow = new google.maps.InfoWindow({
@@ -35,7 +35,48 @@ marker.addListener('click', function() {
   });
 
 }
+
+function dezoom() 
+{
+    var mapProp2= {
+      center:new google.maps.LatLng(48.896014, 2.236409),
+      zoom:10,
+    };
+
+    var map2=new google.maps.Map(document.getElementById("googleMap"),mapProp2);
+
+    var marker2 = new google.maps.Marker({
+    position: {lat: 48.896014, lng: 2.236409},
+    map: map2,
+    draggable:true,
+    animation: google.maps.Animation.DROP,
+    title: 'Marker !'
+  });
+
+    
+
+  }
+
+ function zoom() 
+ {
+    var mapProp3= {
+      center:new google.maps.LatLng(48.896014, 2.236409),
+      zoom:15,
+    };
+
+    var map3=new google.maps.Map(document.getElementById("googleMap"),mapProp3);
+
+    var marker3 = new google.maps.Marker({
+    position: {lat: 48.896014, lng: 2.236409},
+    map: map3,
+    draggable:true,
+    animation: google.maps.Animation.DROP,
+    title: 'Marker !'
+  });
+} 
 </script>
+<input type="button" value="Zoomer" onClick="zoom()">
+<input type="button" value="Dezoomer" onClick="dezoom()">
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwYDZXvLWURfQbLog4wmq2WFWh9bmc560&callback=myMap"></script>
 </body>
 </html>
